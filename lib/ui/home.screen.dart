@@ -1,6 +1,6 @@
-import 'pages/hello_dialog.dart';
-import 'pages/action_sheet.dart';
 import 'package:flutter/cupertino.dart';
+import 'pages/actions/actions.screen.dart';
+import 'pages/hello/hello.screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.search),
           label: 'Action Sheet',
-        ),
+        )
       ]),
       tabBuilder: (context, index) {
         switch (index) {

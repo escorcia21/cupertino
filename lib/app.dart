@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import 'home_screen.dart';
+import 'ui/home.screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -14,7 +14,7 @@ class _HelloDialogPageState extends State<HelloDialogPage> {
     showCupertinoModalPopup(
       context: context,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: const Text('Alert'),
+        title: const Text('Hello, world'),
         content: Text(message),
         actions: [
           CupertinoDialogAction(
@@ -35,27 +35,31 @@ class _HelloDialogPageState extends State<HelloDialogPage> {
         navigationBar: const CupertinoNavigationBar(
           middle: Text('Home'),
         ),
-        child: Column(
-          children: [
-            CupertinoTextField(
-              controller: widget.myController,
-              placeholder: 'Enter your name',
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            CupertinoButton(
-              child: const Text('Show Alert'),
-              onPressed: () {
-                if (widget.myController.text.isNotEmpty) {
-                  _showAlertDialog(
-                      context, 'Hello World, ${widget.myController.text}');
-                } else {
-                  _showAlertDialog(context, 'Please enter your name');
-                }
-              },
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CupertinoTextField(
+                controller: widget.myController,
+                placeholder: 'Enter your name',
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              CupertinoButton(
+                child: const Text('Greet me'),
+                onPressed: () {
+                  if (widget.myController.text.isNotEmpty) {
+                    _showAlertDialog(context,
+                        'Nice to meet you, ${widget.myController.text}');
+                  } else {
+                    _showAlertDialog(context, 'Please enter your name');
+                  }
+                },
+              ),
+            ],
+          ),
         ));
   }
 }
